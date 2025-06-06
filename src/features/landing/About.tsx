@@ -9,34 +9,31 @@ export default function About() {
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold text-red-600 mb-6">About Us</h2>
             <p className="text-gray-600 text-justify leading-relaxed">
-              At <b className="text-red-600"><span className="text-gray-500">El Reno</span> Nail Spa</b>,
+              <b className="text-red-600">
+                <span className="text-gray-500">Name of Salon</span>
+              </b>,
               <br /><br />
-              <span className="text-red-600">We</span> are more than just a nail salon. We are a family-owned and
-              family-operated business dedicated to serving our community with
-              care and excellence.
+              <span className="text-red-600">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Vivamus
+              in vulputate tortor. Cras dapibus, sapien at vehicula luctus, justo nulla
+              sodales massa, sed gravida justo risus et erat.
               <br />
-              <span className="text-red-600">As</span> a new addition to the town, we take pride in offering a welcoming
-              and relaxing environment where every client feels valued and
-              pampered.
+              <span className="text-red-600">Suspendisse</span> potenti. Integer feugiat, risus sed finibus rutrum, sapien
+              arcu tristique sapien, in tempor leo nisl a odio.
               <br />
-              <span className="text-red-600">Our</span> mission is simple: to provide outstanding nail and spa services
-              that combine quality, creativity, and comfort. Whether you&apos;re here for a quick touch-up,
-              a luxurious spa treatment, or stunning nail art,
-              our team is committed to exceeding your expectations.
+              <span className="text-red-600">Donec</span> convallis orci vel fermentum suscipit. Aliquam erat volutpat.
+              Proin sit amet lacus ut arcu tincidunt porta.
               <br />
-              <span className="text-red-600">We</span> believe in building lasting relationships with our clients by
-              delivering personalized care and attention to detail. Every visit to
-              El Reno Nail Spa is an opportunity to relax, unwind, and leave
-              feeling refreshed and confident.
+              <span className="text-red-600">Praesent</span> nec fringilla libero. Vestibulum ac dictum augue. Quisque
+              blandit vitae augue nec ultrices. Nullam tincidunt metus
+              a lacus elementum, at dapibus lorem tincidunt.
               <br />
-              <span className="text-red-600">Thank you</span> for welcoming us to El Reno. We look forward to serving
-              you and being a part of your self-care journey!
+              <span className="text-red-600">Thank you</span> for visiting our salon. We look forward to pampering you!
             </p>
           </div>
 
           {/* Image */}
           <div className="md:w-1/2 md:pl-8 mt-8 md:mt-0">
-            <StoreFront className=" w-3xl h-3xl rounded-2xl" />
+            <StoreFront className="w-3xl h-3xl rounded-2xl" />
           </div>
         </div>
       </div>

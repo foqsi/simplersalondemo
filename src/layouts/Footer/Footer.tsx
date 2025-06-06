@@ -6,16 +6,20 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Branding & Contact */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">El Reno Nail Spa</h2>
-          <p className="text-gray-400 mb-4">Nail Perfection, Every Time 💅</p>
+          <h2 className="text-2xl font-bold mb-2">Simpler Salon Demo</h2>
+          <p className="text-gray-400 mb-4">&apos;Your Quote Here&apos;</p>
           <div className="space-y-2 text-sm text-gray-300">
             <p>
               <i className="fas fa-map-marker-alt mr-2 text-red-400" />
-              1605 Investors Ave, El Reno, OK 73036
+              Your address
             </p>
             <p>
               <i className="fas fa-phone-alt mr-2 text-green-400" />
-              <a href="tel:14056665565" className="hover:underline">(405) 666-5565</a>
+              <a href="tel:5555555555" className="hover:underline">Your phone number</a>
+            </p>
+            <p>
+              <i className="fas fa-email-alt mr-2 text-green-400" />
+              <a href="mailto:gmail@gmail.com" className="hover:underline">Your email</a>
             </p>
 
           </div>
@@ -45,7 +49,7 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a
-              href="https://www.facebook.com/elrenonailspa/"
+              href="https://facebook.com"
               className="text-gray-400 hover:text-white transition"
               aria-label="Facebook"
               target="_blank"
@@ -54,7 +58,7 @@ export default function Footer() {
               <i className="fab fa-facebook-f" />
             </a>
             <a
-              href="https://www.instagram.com/elrenonailspa/"
+              href="https://instagram.com"
               className="text-gray-400 hover:text-white transition"
               aria-label="Instagram"
               target="_blank"

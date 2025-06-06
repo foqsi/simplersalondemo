@@ -44,7 +44,7 @@ export default function Navbar() {
           >
             <Logo className="w-16 h-16" />
             <span className="text-2xl font-bold text-gray-400">
-              El Reno <span className="text-red-600">Nail Spa</span>
+              Simpler <span className="text-blue-500">Salon</span><span className='text-blue-800'> Demo</span>
             </span>
           </Link>
 
