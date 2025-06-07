@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 import toast from 'react-hot-toast';
 import { SALON_ID } from '@/lib/constants';
+import Throbber from '../Throbber';
 
 interface Category {
   id: number;
@@ -202,7 +203,9 @@ export default function ServicesEditor() {
       {/* Service List */}
       <div className="space-y-8">
         {loading ? (
-          <p>Loading services...</p>
+          <div className='flex justify-center items-center'>
+            <Throbber />
+          </div>
         ) : (
           servicesByCategory.map((cat) => (
             <div key={cat.id}>
