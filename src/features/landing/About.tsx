@@ -1,4 +1,5 @@
 import StoreFront from "@/components/StoreFront";
+import { COMPANY_NAME } from "@/lib/constants";
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
             <h2 className="text-3xl font-bold text-red-600 mb-6">About Us</h2>
             <p className="text-gray-600 text-justify leading-relaxed">
               <b className="text-red-600">
-                <span className="text-gray-500">Name of Salon</span>
+                <span className="text-gray-500">{COMPANY_NAME}</span>
               </b>,
               <br /><br />
               <span className="text-red-600">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Vivamus

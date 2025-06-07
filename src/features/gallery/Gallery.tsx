@@ -80,7 +80,7 @@ export default function GallerySection() {
         <p className="text-center text-sm text-gray-500 mt-10 max-w-2xl mx-auto">
           <em>
             All photos shown are real work completed by{' '}
-            <strong>El Reno Nail Spa</strong>. These images are protected by
+            <strong>Your Business</strong>. These images are protected by
             copyright and must not be used, copied, or displayed anywhere else
             without permission.
           </em>

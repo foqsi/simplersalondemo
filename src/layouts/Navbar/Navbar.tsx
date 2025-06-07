@@ -3,6 +3,7 @@
 import Logo from '../../components/Logo';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { COMPANY_NAME_NAV } from '@/lib/constants';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,8 +44,8 @@ export default function Navbar() {
             className="flex items-center space-x-2"
           >
             <Logo className="w-16 h-16" />
-            <span className="text-2xl font-bold text-gray-400">
-              Simpler <span className="text-blue-500">Salon</span><span className='text-blue-800'> Demo</span>
+            <span className="text-2xl font-bold text-gradient bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">
+              {COMPANY_NAME_NAV}
             </span>
           </Link>
 

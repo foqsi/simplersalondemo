@@ -1,3 +1,4 @@
+import { COMPANY_NAME, COMPANY_QUOTE, COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE } from '@/lib/constants';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function Footer() {
@@ -6,20 +7,20 @@ export default function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Branding & Contact */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">Simpler Salon Demo</h2>
-          <p className="text-gray-400 mb-4">&apos;Your Quote Here&apos;</p>
+          <h2 className="text-2xl font-bold mb-2">{COMPANY_NAME}</h2>
+          <p className="text-gray-400 mb-4">&apos;{COMPANY_QUOTE}&apos;</p>
           <div className="space-y-2 text-sm text-gray-300">
             <p>
               <i className="fas fa-map-marker-alt mr-2 text-red-400" />
-              Your address
+              {COMPANY_ADDRESS}
             </p>
             <p>
               <i className="fas fa-phone-alt mr-2 text-green-400" />
-              <a href="tel:5555555555" className="hover:underline">Your phone number</a>
+              <a href="tel:5555555555" className="hover:underline">{COMPANY_PHONE}</a>
             </p>
             <p>
               <i className="fas fa-email-alt mr-2 text-green-400" />
-              <a href="mailto:gmail@gmail.com" className="hover:underline">Your email</a>
+              <a href="mailto:gmail@gmail.com" className="hover:underline">{COMPANY_EMAIL}</a>
             </p>
 
           </div>
@@ -72,7 +73,7 @@ export default function Footer() {
 
       {/* Bottom line */}
       <div className="mt-12 text-center text-gray-500 text-sm border-t border-gray-700 pt-6">
-        &copy; {new Date().getFullYear()} El Reno Nail Spa. All rights reserved.
+        &copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
       </div>
     </footer>
   );

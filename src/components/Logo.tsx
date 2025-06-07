@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import img from '../assets/images/translogo.png';
+import img from '/public/templogo.png';
 
 export default function Logo({ className = 'h-10 w-10' }: { className?: string }) {
   return (
