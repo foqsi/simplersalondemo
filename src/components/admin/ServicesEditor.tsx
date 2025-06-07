@@ -18,6 +18,7 @@ interface Service {
   price: number;
   category_id: number;
   price_modifier?: boolean;
+  sort_order?: number;
 }
 
 export default function ServicesEditor() {
@@ -36,7 +37,7 @@ export default function ServicesEditor() {
       .from('categories')
       .select('*')
       .eq('salon_id', SALON_ID)
-      .order('name');
+      .order('sort_order');
 
     const { data: svcData } = await supabase
       .from('services')
