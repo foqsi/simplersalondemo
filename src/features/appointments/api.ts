@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabaseClient';
 import emailjs from 'emailjs-com';
 import { AppointmentFormData } from './types';
-import { SALON_ID, EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '@/lib/constants';
+import { SALON_ID, PUBLIC_KEY, SERVICE_ID, DEMO_TEMPLATE_ID } from '@/lib/constants';
 
 export const normalizeTime = (raw: string): string => {
   const [h = '00', m = '00', s = '00'] = raw.split(':');
@@ -78,14 +78,14 @@ export async function submitAppointment(form: AppointmentFormData) {
     time: formatTime(selectedTime),
   };
 
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+  // const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
   // const templateId = isValidEmail ? 'template_ywly2ji' : 'template_uhpnfar';
 
   await emailjs.send(
-    EMAILJS_SERVICE_ID,
-    EMAILJS_TEMPLATE_ID,
+    SERVICE_ID,
+    DEMO_TEMPLATE_ID,
     templateParams,
-    EMAILJS_PUBLIC_KEY
+    PUBLIC_KEY
   );
 
   return data;
