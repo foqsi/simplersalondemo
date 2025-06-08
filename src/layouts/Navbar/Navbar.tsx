@@ -4,6 +4,7 @@ import Logo from '../../components/Logo';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { COMPANY_NAME_NAV } from '@/lib/constants';
+import GetSiteButton from '@/components/GetSiteButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,17 +51,21 @@ export default function Navbar() {
           </Link>
 
 
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex items-center space-x-6">
             <NavLinks />
+            <GetSiteButton />
           </div>
 
-          <div className="md:hidden">
+
+          <div className="md:hidden flex items-center gap-2">
+            <GetSiteButton />
             <button onClick={() => setIsOpen(true)} className="text-gray-700 focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
+
         </div>
       </nav>
 
