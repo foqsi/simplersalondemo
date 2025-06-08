@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import storefrontImg from '../assets/images/storefront.jpg';
+import storefrontImg from '/public/images/storefront.jpg';
 
 export default function StoreFront({ className = '' }: { className?: string }) {
   return (

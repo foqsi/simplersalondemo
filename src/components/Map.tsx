@@ -39,7 +39,7 @@ export default function ContactPage() {
               <InfoWindowF position={center} onCloseClick={() => setInfoOpen(false)}>
                 <div className="w-60 sm:w-64">
                   <Image
-                    src="/public/templogo.png"
+                    src="/images/storefront.jpg"
                     alt="Simpler Salon"
                     width={256}
                     height={112}
