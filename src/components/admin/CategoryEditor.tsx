@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { supabase } from '@/lib/supabaseClient';
 import { SALON_ID } from '@/lib/constants';
-import { DndContext, closestCenter } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, closestCenter } from '@dnd-kit/core';
 import {
   arrayMove,
   SortableContext,
@@ -166,7 +166,7 @@ export default function CategoryEditor() {
     );
   }
 
-  async function handleDragEnd(event: any) {
+  async function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
 

@@ -12,23 +12,8 @@ export default function GalleryUploader({ onUploadComplete }: { onUploadComplete
   const [files, setFiles] = useState<File[]>([]);
   const [caption, setCaption] = useState('');
   const [uploading, setUploading] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const uploaderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!files) {
-      setPreviewUrl(null);
-      return;
-    }
-
-    if (files.length === 0) {
-      setPreviewUrl(null);
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = (e) => setPreviewUrl(e.target?.result as string);
-    reader.readAsDataURL(files[0]);
-  }, [files]);
 
   const handleUpload = async () => {
     if (files.length === 0) {
