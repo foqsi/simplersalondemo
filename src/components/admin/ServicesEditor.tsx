@@ -202,7 +202,9 @@ export default function ServicesEditor() {
       </div>
 
       {/* Service List */}
-      <div className="space-y-8">
+      {/* Scrollable Service List */}
+      <div className="max-h-[600px] overflow-y-auto pr-2 space-y-8 border rounded bg-white p-4">
+
         {loading ? (
           <div className='flex justify-center items-center'>
             <Throbber />

@@ -5,7 +5,7 @@ export default function StoreFront({ className = '' }: { className?: string }) {
   return (
     <Image
       src={storefrontImg}
-      alt="El Reno Nail Spa Storefront"
+      alt="Simpler Salon"
       className={`object-cover ${className}`}
       width={600}
       height={400}

@@ -1,33 +1,33 @@
 import GallerySection from '@/features/gallery/Gallery';
 
 export const metadata = {
-  title: 'Gallery | El Reno Nail Spa',
-  description: 'Explore our beautiful nail art and spa experiences at El Reno Nail Spa.',
-  authors: [{ name: 'El Reno Nail Spa', url: 'https://elrenonailspa.com' }],
+  title: 'Gallery | Simpler Salon',
+  description: 'Check Out the Simpler Salon Demo!',
+  authors: [{ name: 'Simpler Salon', url: 'https://demo.simplersalon.com/gallery' }],
   robots: 'index, follow',
   generator: 'Next.js',
-  applicationName: 'El Reno Nail Spa',
-  keywords: ['nail spa', 'nail art', 'El Reno', 'manicure', 'pedicure', 'gallery'],
+  applicationName: 'Simpler Salon',
+  keywords: ['nail spa', 'nail art', 'manicure', 'pedicure', 'gallery'],
   openGraph: {
-    title: 'Gallery | El Reno Nail Spa',
-    description: 'View real nail art done by El Reno Nail Spa.',
-    url: 'https://elrenonailspa.com/gallery',
-    siteName: 'El Reno Nail Spa',
+    title: 'Gallery | Simpler Salon',
+    description: 'View the Simpler Salon Demo Gallery.',
+    url: 'https://demo.simplersalon.com/gallery',
+    siteName: 'Simpler Salon',
     type: 'website',
     images: [
       {
-        url: 'https://elrenonailspa.com/images/preview.png',
+        url: 'https://demo.simplersalon.com/gallery',
         width: 1200,
         height: 630,
-        alt: 'Gallery preview of nail art from El Reno Nail Spa',
+        alt: 'Simpler Salon Gallery Demo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gallery | El Reno Nail Spa',
-    description: 'Explore our beautiful nail art and spa experiences at El Reno Nail Spa.',
-    images: ['https://elrenonailspa.com/images/preview.png'],
+    title: 'Gallery | Simpler Salon',
+    description: 'Check Out the Simpler Salon Demo!',
+    images: ['https://demo.simplersalon.com/gallery'],
   },
 };
 

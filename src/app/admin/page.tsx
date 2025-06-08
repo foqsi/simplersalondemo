@@ -8,7 +8,6 @@ import GalleryManager from '@/components/admin/GalleryManager';
 import Throbber from '@/components/Throbber';
 import AppointmentsViewer from '@/components/admin/AppointmentViewer';
 import CategoryEditor from '@/components/admin/CategoryEditor';
-import { ChevronDown } from 'lucide-react';
 
 type AdminTab = 'gallery' | 'services' | 'promo' | 'appointments';
 type ServicesSubTab = 'services' | 'categories';
@@ -16,7 +15,7 @@ type ServicesSubTab = 'services' | 'categories';
 const tabs: { key: AdminTab; label: string }[] = [
   { key: 'gallery', label: 'Gallery' },
   { key: 'services', label: 'Services' },
-  { key: 'promo', label: 'Promo Banner' },
+  { key: 'promo', label: 'Banner' },
   { key: 'appointments', label: 'Appointments' },
 ];
 
@@ -25,8 +24,7 @@ export default function AdminDashboard() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState<AdminTab>('gallery');
   const [servicesSubTab, setServicesSubTab] = useState<ServicesSubTab>('services');
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [galleryUpdated, setGalleryUpdated] = useState(false);
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
@@ -64,7 +62,7 @@ export default function AdminDashboard() {
 
   return (
     <main className="min-h-screen pt-20 px-4 max-w-5xl mx-auto">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-2">
         <h1 className="text-3xl font-bold text-red-600">Admin Dashboard</h1>
         <button
           onClick={handleLogout}
@@ -74,75 +72,50 @@ export default function AdminDashboard() {
         </button>
       </div>
 
-      {/* Tabs */}
-      <div className="flex justify-center mb-8 border-b gap-4">
-        {tabs.map((tab) =>
-          tab.key === 'services' ? (
-            <div key="services" ref={dropdownRef} className="relative">
-              <button
-                onClick={() => {
-                  setActiveTab('services');
-                  setServicesDropdownOpen((prev) => !prev);
-                }}
-                className={`flex items-center gap-1 px-4 py-2 font-medium border-b-2 transition-colors duration-200 ${activeTab === 'services'
-                    ? 'border-red-600 text-red-600'
-                    : 'border-transparent text-gray-500 hover:text-red-500'
-                  }`}
-              >
-                {tab.label}
-                <ChevronDown size={16} />
-              </button>
-
-              {servicesDropdownOpen && activeTab === 'services' && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-md z-10">
-                  <button
-                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 ${servicesSubTab === 'services' ? 'bg-gray-100 font-medium' : ''
-                      }`}
-                    onClick={() => {
-                      setServicesSubTab('services');
-                      setServicesDropdownOpen(false);
-                    }}
-                  >
-                    Edit Services
-                  </button>
-                  <button
-                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 ${servicesSubTab === 'categories' ? 'bg-gray-100 font-medium' : ''
-                      }`}
-                    onClick={() => {
-                      setServicesSubTab('categories');
-                      setServicesDropdownOpen(false);
-                    }}
-                  >
-                    Edit Categories
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <button
-              key={tab.key}
-              onClick={() => {
-                setActiveTab(tab.key);
-                setServicesDropdownOpen(false);
-              }}
-              className={`px-4 py-2 font-medium border-b-2 transition-colors duration-200 ${activeTab === tab.key
-                  ? 'border-red-600 text-red-600'
-                  : 'border-transparent text-gray-500 hover:text-red-500'
-                }`}
-            >
-              {tab.label}
-            </button>
-          )
-        )}
+      {/* Main Tabs */}
+      <div className="flex justify-center mb-4 border-b gap-1 text-sm md:text-lg">
+        {tabs.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => {
+              handleTabChange(tab.key);
+              setServicesSubTab('services');
+            }}
+            className={`px-4 py-2 font-medium border-b-2 transition-colors duration-200 ${activeTab === tab.key
+              ? 'border-red-600 text-red-600'
+              : 'border-transparent text-gray-500 hover:text-red-500'
+              }`}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
+      {/* Sub Tabs for Services */}
+      {activeTab === 'services' && (
+        <div className="flex justify-center mb-4 gap-1">
+          {(['services', 'categories'] as ServicesSubTab[]).map((key) => (
+            <button
+              key={key}
+              onClick={() => setServicesSubTab(key)}
+              className={`px-4 py-1 font-medium border-b-2 transition-colors duration-200 ${servicesSubTab === key
+                ? 'border-red-600 text-red-600'
+                : 'border-transparent text-gray-500 hover:text-red-500'
+                }`}
+            >
+              {key === 'services' ? 'Edit Services' : 'Edit Categories'}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Tab Panels */}
-      <div className="space-y-12">
+      <div className="space-y-12 flex justify-center ">
         {activeTab === 'gallery' && (
           <section>
             <h2 className="text-xl font-semibold mb-4 text-red-600">Upload Gallery Images</h2>
-            <GalleryUploader />
-            <GalleryManager />
+            <GalleryUploader onUploadComplete={() => setGalleryUpdated((v) => !v)} />
+            <GalleryManager refreshKey={galleryUpdated} />
           </section>
         )}
 
@@ -153,7 +126,6 @@ export default function AdminDashboard() {
             {servicesSubTab === 'categories' && <CategoryEditor />}
           </section>
         )}
-
 
         {activeTab === 'promo' && (
           <section>
@@ -170,5 +142,6 @@ export default function AdminDashboard() {
         )}
       </div>
     </main>
+
   );
 }

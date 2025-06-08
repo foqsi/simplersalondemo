@@ -199,6 +199,7 @@ export default function CategoryEditor() {
 
   return (
     <div className="bg-white p-6 rounded shadow-md">
+      <h3 className="text-lg font-bold mb-4">Edit Service Categories</h3>
       <div className="flex gap-4 mb-6">
         <input
           className="border p-2 rounded w-full"

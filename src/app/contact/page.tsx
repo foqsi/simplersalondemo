@@ -2,8 +2,8 @@ import Map from '@/components/Map';
 import FadeInDown from '@/components/animations/FadeInDown';
 
 export const metadata = {
-  title: 'Contact Us | El Reno Nail Spa',
-  description: 'Get in touch with El Reno Nail Spa for questions, feedback, or directions.',
+  title: 'Contact Us | Simpler Salon Spa',
+  description: 'Get in touch with Simpler Salon Spa for questions, feedback, or directions.',
 };
 
 export default function ContactPage() {
